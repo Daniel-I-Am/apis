@@ -23,7 +23,7 @@ String.prototype.reverse = function() {
 
 
 function beePower(time) {
-    prod_reg = /([0-9]{3})/g
+    prod_reg = /([0-9]{3})(?=[0-9])/g
     prod = findGetParameter('rft').reverse().replace(prod_reg, '$1.').reverse();
     ticks = roundDec(time, 3)
     secs = roundDec(time/20, 3)
