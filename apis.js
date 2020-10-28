@@ -42,7 +42,10 @@ function init() {
         type = findGetParameter('api');
         switch (type) {
             case "beePower":
-                return beePower((2**63-1)/(parseFloat(findGetParameter('rft'))))
+                if (findGetParameter('rft'))
+                    return beePower((2**63-1)/(parseFloat(findGetParameter('rft'))));
+                else
+                    return "Provide an `rft` parameter in order to do the math";
         }
     })();
 }
