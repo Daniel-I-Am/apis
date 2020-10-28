@@ -13,7 +13,7 @@ function findGetParameter(parameterName) {
 
 
 function roundDec(number, digits) {
-    return Math.round(number*10**digits)/(10**digits)
+    return Math.round(number*10**digits)/(10**digits);
 }
 
 
@@ -23,17 +23,17 @@ String.prototype.reverse = function() {
 
 
 function parseNumber(number) {
-    let number_reg = /([0-9]{3})(?=[0-9])/g
+    let number_reg = /([0-9]{3})(?=[0-9])/g;
     return number.toString().reverse().replace(number_reg, '$1,').reverse();
 }
 
 function beePower(time) {
-    prod = parseNumber(findGetParameter('rft'))
-    ticks = parseNumber(roundDec(time, 3))
-    secs = parseNumber(roundDec(time/20, 3))
-    hours = parseNumber(roundDec(time/(20*3600), 3))
-    years = parseNumber(roundDec(time/(20*3600*24*365.2421), 3))
-    return `When producing ${prod} RF/t:\n${ticks} ticks\n${secs} seconds\n${hours} hours\n${years} years`
+    prod = parseNumber(findGetParameter('rft'));
+    ticks = parseNumber(roundDec(time, 3));
+    secs = parseNumber(roundDec(time/20, 3));
+    hours = parseNumber(roundDec(time/(20*3600), 3));
+    years = parseNumber(roundDec(time/(20*3600*24*365.2421), 3));
+    return `When producing ${prod} RF/t:\n${ticks} ticks\n${secs} seconds\n${hours} hours\n${years} years`;
 }
 
 
@@ -51,4 +51,4 @@ function init() {
 }
 
 
-window.addEventListener('load', init)
+window.addEventListener('load', init);
